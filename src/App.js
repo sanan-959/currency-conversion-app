@@ -8,7 +8,7 @@ function App() {
   const [to, setTo] = useState("PKR");
   const [convertedAmount, setConvertedAmount] = useState(null);
 
-  const currencyInfo = useCurrencyInfo();
+  const currencyInfo = useCurrencyInfo(from);
 
   const convert = () => {
     if (!amount || isNaN(amount)) return;
@@ -26,6 +26,8 @@ function App() {
 
   
   const options = currencyInfo && currencyInfo.rates ? Object.keys(currencyInfo.rates) : [];
+
+
 
   return (
     <div className="flex justify-center items-center h-screen bg-gradient-to-r from-blue-200 to-blue-400">
